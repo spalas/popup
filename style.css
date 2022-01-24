@@ -1,0 +1,145 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+}
+body{
+    min-height: 100vh;
+    background: rgb(90, 29, 231);
+}
+.popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+
+
+}
+.contentBox{
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: 0 5px 15px rgba(0, 0,0, 0.1);
+}
+.contentBox .imgBox{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.contentBox .imgBox::before{
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background:rgba(0, 0,0, 0.1) ;
+    border-radius: 50%;
+}
+.contentBox .imgBox img{
+    position: relative;
+    max-width: 250px;
+    z-index: 1;
+
+}
+.contentBox .content{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contentBox .content h3
+{
+    color: rgb(90, 29, 231);
+    line-height: 1em;
+    font-weight: 300px;
+    font-size: 2em;
+
+}
+.contentBox .content h2{
+    font-size: 3em;
+    line-height: 1em;
+    color: rgb(226, 9, 9);
+}
+.contentBox .content h2 span
+{
+    color: rgb(90, 29, 231);
+    font-size: 0.75em;
+    text-transform: uppercase;
+}
+.contentBox .content p
+{
+font-weight: 300;
+
+}
+.contentBox .content a
+{
+    display: inline-block;
+    padding: 10px 20px;
+    background:   rgb(226, 9, 9);
+    color: white;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.close
+{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgb(235, 234, 234) url(images/close.png);
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+@media(max-width: 765px)
+{
+    .contentBox{
+        width: 300px;
+        height: auto;
+        flex-direction: column;
+    }
+    .contentBox .imgBox{
+        height: 200px;
+        transform: translateY(-50px);
+
+    }
+    .contentBox .imgBox::before
+    {
+        background: white;
+    }
+    .contentBox .content
+    {
+        height: auto;
+        text-align: center;
+        padding: 20px;
+        padding-top: 0;
+    }
+    .close{
+        top: -50px;
+        right: -5px;
+        background: rgb(235, 234, 234) url(images/close.png);
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: center;
+
+    }
+}
